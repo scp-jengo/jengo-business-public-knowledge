@@ -1,0 +1,225 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://scp-jengo.org/schemas/knowledge-item.schema.json",
+  "type": "object",
+  "title": "Knowledge Item",
+  "description": "A single piece of knowledge in the Jengo system - patterns, frameworks, lessons learned, or best practices",
+  "required": ["id", "type", "title", "content", "metadata"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (UUID v4)",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "pattern",
+        "best-practice",
+        "framework",
+        "procedure",
+        "lesson-learned",
+        "protocol",
+        "guideline"
+      ],
+      "description": "Type of knowledge item"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 100,
+      "description": "Brief descriptive title"
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "Optional short summary (1-2 sentences)"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full content (markdown supported)",
+      "minLength": 10
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["created", "author", "layer", "status"],
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of creation"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of last update"
+        },
+        "author": {
+          "type": "string",
+          "description": "Author identity (agent name, user name, or organization)"
+        },
+        "layer": {
+          "type": "string",
+          "enum": [
+            "device",
+            "user",
+            "department",
+            "organization",
+            "foundation"
+          ],
+          "description": "Originating layer in the hierarchy"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "review",
+            "approved",
+            "deprecated"
+          ],
+          "description": "Current status of knowledge item"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "description": "Tags for categorization (lowercase, hyphen-separated)"
+        },
+        "verified": {
+          "type": "boolean",
+          "description": "Has this been verified by domain experts?"
+        },
+        "verification_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When verification occurred"
+        },
+        "verifiers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Who verified this knowledge"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Confidence level in this knowledge (0.0-1.0)"
+        },
+        "source": {
+          "type": "string",
+          "description": "Where this knowledge originated (URL, document reference, etc.)"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "IDs of other knowledge items this depends on"
+          },
+          "description": "Knowledge items that must be understood first"
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "IDs of related knowledge items"
+          },
+          "description": "Related knowledge items (not dependencies)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "application": {
+      "type": "object",
+      "description": "When and how to apply this knowledge",
+      "properties": {
+        "when_to_use": {
+          "type": "string",
+          "description": "Conditions under which this knowledge applies"
+        },
+        "when_not_to_use": {
+          "type": "string",
+          "description": "Conditions under which this knowledge does NOT apply"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "What must be in place before applying this"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "description": "Supporting evidence for this knowledge",
+      "properties": {
+        "empirical": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {"type": "string"},
+              "source": {"type": "string"},
+              "date": {"type": "string", "format": "date"}
+            }
+          },
+          "description": "Empirical evidence supporting this knowledge"
+        },
+        "theoretical": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {"type": "string"},
+              "source": {"type": "string"}
+            }
+          },
+          "description": "Theoretical basis for this knowledge"
+        },
+        "case_studies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {"type": "string"},
+              "outcome": {"type": "string"},
+              "date": {"type": "string", "format": "date"}
+            }
+          },
+          "description": "Real-world applications and their outcomes"
+        }
+      }
+    },
+    "revision_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "author", "changes"],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "author": {
+            "type": "string"
+          },
+          "changes": {
+            "type": "string",
+            "description": "Description of what changed"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Semantic version number"
+          }
+        }
+      },
+      "description": "History of changes to this knowledge item"
+    }
+  },
+  "additionalProperties": false
+}
