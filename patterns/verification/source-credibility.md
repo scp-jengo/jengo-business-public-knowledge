@@ -1,51 +1,38 @@
 # Source Credibility Assessment
 
-**Purpose:** Systematic evaluation of information source reliability
-**Applies to:** Research, fact-checking, knowledge integration, decision-making
+A structured approach to assessing whether a source's output can be used. The question is not "is this source trustworthy" but "what does this claim require to be true."
 
 ---
 
-## Overview
+## Core Principle
 
-Not all sources are equally reliable. This framework provides systematic criteria for evaluating source credibility before accepting claims as true.
+**Credibility is claim-specific, not source-global.**
 
-**Key Principle:** Trust but verify. Even credible sources can be wrong. Even non-credible sources can occasionally be right. Credibility assessment is probabilistic, not binary.
+A source with a strong track record can publish a false claim. A source with a weak track record can be accidentally correct. Assessing source credibility without assessing the specific claim produces false confidence.
+
+Treat source credibility as a prior, not a verdict:
+- Strong prior: reduce verification effort slightly
+- Weak prior: increase verification effort
+- Zero prior: verify from primary sources regardless
 
 ---
 
-## The Seven Credibility Factors
+## Five-Step Assessment
 
-### 1. Domain Expertise
+### Step 1: Identify What the Claim Requires to Be True
 
-**Question:** Does the source have relevant knowledge in this specific domain?
-
-**Evaluation:**
-
-```
-[HIGH]: Recognized expert with years of experience in exact domain
-[MEDIUM]: General knowledge in related domain
-[LOW]: No relevant expertise
-[UNKNOWN]: Cannot determine expertise level
-```
+Before evaluating the source, decompose the claim. What are the necessary conditions?
 
 **Examples:**
+- Claim about statistics → requires: statistics exist, collected correctly, interpreted correctly
+- Claim about intent → requires: access to internal information
+- Claim about future events → requires: predictive model or inside knowledge
 
-- **HIGH:** Cardiologist on heart disease
-- **MEDIUM:** General practitioner on heart disease
-- **LOW:** Software engineer on heart disease
-- **UNKNOWN:** Anonymous poster on heart disease
-
-**Red Flags:**
-
-- Claimed expertise without verifiable credentials
-- Expertise in unrelated field (physicist on economics)
-- "I did my own research" (substitute for actual expertise)
+Map the requirements before assessing whether the source can meet them.
 
 ---
 
-### 2. Access to Evidence
-
-**Question:** Does the source have direct access to relevant evidence?
+### Step 2: Assess Whether Source Has Access to That Evidence
 
 **Evaluation:**
 
@@ -56,54 +43,53 @@ Not all sources are equally reliable. This framework provides systematic criteri
 [HEARSAY]: "I heard that..." with no source
 ```
 
-**Examples:**
-
-- **DIRECT:** Researcher publishing original study
-- **SECONDARY:** Journalist citing the study
-- **TERTIARY:** Blogger summarizing journalist's article
-- **HEARSAY:** Friend who "heard about" the study
+**Questions to ask:**
+- Does this source have the type of access that would allow them to know this?
+- Is the source reporting firsthand or repeating?
+- Can they name their sources?
 
 **Red Flags:**
-
 - No citations provided
 - "Trust me" without evidence
-- "Everyone knows" (appeal to common knowledge)
 - Cannot name primary source when asked
+- Claims insider knowledge with no verification
 
 ---
 
-### 3. Track Record
+### Step 3: Check Track Record on Similar Claims
 
-**Question:** Has this source been accurate in the past?
+**Track record is specific, not general.**
+
+A source reliable on financial data may be unreliable on political claims. A source reliable in normal conditions may fail under time pressure.
 
 **Evaluation:**
 
 ```
-[STRONG]: History of accurate predictions/reporting
+[STRONG]: History of accuracy on this type of claim
 [MIXED]: Some hits, some misses
-[WEAK]: History of false claims
+[WEAK]: History of false claims in this domain
 [UNKNOWN]: No track record available
 ```
 
-**How to Check:**
-
+**How to check:**
 - Search "[source name] predictions" + "wrong"
 - Check fact-checking sites
 - Look for corrections/retractions
 - Compare past claims to actual outcomes
 
 **Red Flags:**
-
-- Multiple debunked claims
+- Multiple debunked claims in this domain
 - No corrections when wrong
 - Doubles down after being corrected
 - Deletes failed predictions
 
 ---
 
-### 4. Incentive Structure
+### Step 4: Identify the Interest Structure
 
-**Question:** Does the source have financial, ideological, or social incentives to distort?
+**Who benefits if this claim is believed?**
+
+Does the source benefit financially, ideologically, socially, or professionally? This does not automatically invalidate the claim — it identifies where additional scrutiny is required.
 
 **Evaluation:**
 
@@ -111,83 +97,86 @@ Not all sources are equally reliable. This framework provides systematic criteri
 [ALIGNED]: Incentives align with truth-seeking
 [MIXED]: Some incentive to distort, some to be accurate
 [CONFLICTED]: Strong incentive to reach specific conclusion
-[UNKNOWN]: Cannot determine incentives
 ```
 
-**Check For:**
-
-- Financial: Who pays them? Who benefits if claim is believed?
-- Ideological: Does claim support their worldview?
+**Check for:**
+- Financial: Who pays them? Who profits if claim is believed?
+- Ideological: Does claim perfectly support their worldview?
 - Social: Does claim boost their status/following?
 - Professional: Does claim protect their reputation?
 
 **Examples:**
-
 - **CONFLICTED:** Tobacco company on smoking safety
 - **CONFLICTED:** Political campaign on opponent's character
 - **MIXED:** Journalist at publication with clear bias
 - **ALIGNED:** Researcher with no stake in outcome
 
 **Red Flags:**
-
 - Undisclosed conflicts of interest
 - Selling product related to claim
-- Claim perfectly aligns with ideology
 - "I'm being silenced!" (martyrdom narrative)
+- Claim perfectly aligns with ideology
 
 ---
 
-### 5. Transparency of Reasoning
+### Step 5: Evaluate Source Quality Factors
 
-**Question:** Can you follow the source's logic from evidence to conclusion?
+Once you've assessed claim requirements, access, track record, and incentives, evaluate these additional factors:
 
-**Evaluation:**
+#### Domain Expertise
+
+Does the source have relevant knowledge in this **specific** domain?
+
+```
+[HIGH]: Recognized expert with years of experience in exact domain
+[MEDIUM]: General knowledge in related domain
+[LOW]: No relevant expertise
+```
+
+**Red Flag:** Expertise in unrelated field (physicist on economics)
+
+---
+
+#### Transparency of Reasoning
+
+Can you follow the source's logic from evidence to conclusion?
 
 ```
 [TRANSPARENT]: Evidence → reasoning → conclusion all clear
 [PARTIAL]: Some steps explained, some opaque
 [OPAQUE]: "Trust me" with no reasoning shown
-[CONTRADICTORY]: Reasoning doesn't support conclusion
 ```
 
-**Good Signs:**
-
+**Good signs:**
 - Shows their work
 - Cites specific evidence
 - Explains each logical step
 - Acknowledges alternative explanations
 
-**Red Flags:**
-
+**Red flags:**
 - "It's obvious" (skips reasoning)
 - Appeals to authority instead of evidence
 - Logical leaps without justification
-- Changes reasoning when challenged
 
 ---
 
-### 6. Epistemic Humility
+#### Epistemic Humility
 
-**Question:** Does the source acknowledge uncertainty and limitations?
-
-**Evaluation:**
+Does the source acknowledge uncertainty and limitations?
 
 ```
 [CALIBRATED]: Confidence matches strength of evidence
-[OVERCONFIGURED]: More confident than evidence warrants
-[UNDERCONFIGURED]: Less confident than evidence warrants
+[OVERCONFIDENT]: More confident than evidence warrants
 [ABSOLUTE]: Never uncertain, always confident
 ```
 
-**Good Signs:**
-
+**Good signs:**
 - States confidence levels explicitly
 - Says "I don't know" when appropriate
 - Acknowledges alternative interpretations
 - Updates when new evidence appears
 
-**Red Flags:**
-
+**Red flags:**
 - "I'm absolutely certain"
 - Never wrong, never updates
 - Dismisses uncertainty as weakness
@@ -195,61 +184,51 @@ Not all sources are equally reliable. This framework provides systematic criteri
 
 ---
 
-### 7. Peer Validation
+#### Correction Culture
 
-**Question:** Do other credible sources agree?
+Does the source correct its errors? How quickly? With what prominence?
 
-**Evaluation:**
+A source that never issues corrections is either never wrong (implausible) or does not disclose errors (significant credibility problem).
 
-```
-[CONSENSUS]: Widely accepted by experts
-[MAJORITY]: Most experts agree
-[CONTESTED]: Significant expert disagreement
-[FRINGE]: Almost no expert support
-```
+**Good signs:**
+- Prominent, timely corrections
+- Acknowledges mistakes clearly
+- Explains what went wrong
 
-**Important Caveats:**
-
-- Consensus can be wrong (historical examples exist)
-- Fringe can be right (occasionally)
-- But default: consensus is more likely to be accurate
-
-**Check For:**
-
-- What do other domain experts say?
-- Has claim been peer-reviewed?
-- Are there replications?
-- Is there active debate or settled science?
-
-**Red Flags:**
-
-- "Suppressed truth" narrative
-- "They don't want you to know"
-- Appeals to persecution ("I'm being silenced!")
-- Cannot name any experts who agree
+**Red flags:**
+- Never corrects
+- Corrections buried or hidden
+- Blames others for their errors
 
 ---
 
-## Credibility Matrix
+## Credibility Signals vs. Credibility Theater
 
-Combine factors to estimate overall credibility:
+**Real signals** (hard to fake, demonstrate history):
+- Documented methodology for how claims were obtained
+- Named sources willing to be identified
+- Track record of corrections
+- Independence from entities being reported on
+- Willingness to publish findings that conflict with their stated position
 
-| Factor | Weight | Your Rating | Weighted Score |
-|--------|--------|-------------|----------------|
-| Domain Expertise | 20% | HIGH/MED/LOW | 20/10/0 |
-| Access to Evidence | 20% | DIRECT/SECONDARY/HEARSAY | 20/10/0 |
-| Track Record | 15% | STRONG/MIXED/WEAK | 15/8/0 |
-| Incentive Structure | 15% | ALIGNED/MIXED/CONFLICTED | 15/8/0 |
-| Transparency | 10% | TRANSPARENT/PARTIAL/OPAQUE | 10/5/0 |
-| Epistemic Humility | 10% | CALIBRATED/OVER/UNDER | 10/5/0 |
-| Peer Validation | 10% | CONSENSUS/CONTESTED/FRINGE | 10/5/0 |
+**Credibility theater** (can be faked or purchased):
+- Professional appearance, polished design
+- Institutional affiliation (affiliation ≠ independence)
+- Large audience or following
+- Awards from within the same industry
+- Self-description as "fact-checking" or "independent"
 
-**Total Score Interpretation:**
+The theater signals can be faked. The real signals require demonstrated history and carry costs to fabricate.
 
-- 80-100: Highly credible source
-- 60-79: Moderately credible (verify before accepting)
-- 40-59: Low credibility (treat as hypothesis only)
-- 0-39: Very low credibility (likely unreliable)
+---
+
+## Track Record vs. Reputation
+
+**Track record:** What a source has actually gotten right or wrong, documented with examples.
+
+**Reputation:** What people say about a source, which reflects social positioning as much as accuracy.
+
+**Key insight:** Reputation can survive extended track record failure. Track record failures can be suppressed by reputation management. When they diverge, track record is the real signal.
 
 ---
 
@@ -258,7 +237,6 @@ Combine factors to estimate overall credibility:
 ### Academic Research (Peer-Reviewed)
 
 **Typical Profile:**
-
 - ✅ Domain expertise (researchers)
 - ✅ Access to evidence (original research)
 - ✅ Transparent reasoning (methodology section)
@@ -266,27 +244,18 @@ Combine factors to estimate overall credibility:
 - ⚠️ Track record (replication crisis)
 
 **How to Evaluate:**
-
-1. Check journal quality (impact factor, peer review process)
+1. Check journal quality (peer review process)
 2. Look for replication studies
-3. Check author conflicts of interest
-4. Verify methodology is sound
-5. Check citation count (but not blindly)
+3. Verify methodology is sound
+4. Check author conflicts of interest
 
-**Red Flags:**
-
-- Predatory journals
-- No peer review
-- Conflict of interest not disclosed
-- Statistical manipulation
-- Results too good to be true
+**Red Flags:** Predatory journals, no peer review, conflict of interest not disclosed
 
 ---
 
 ### Investigative Journalism
 
 **Typical Profile:**
-
 - ⚠️ Domain expertise (varies by topic)
 - ✅ Access to evidence (investigative work)
 - ✅ Transparent reasoning (shows sources)
@@ -294,27 +263,18 @@ Combine factors to estimate overall credibility:
 - ⚠️ Track record (varies by publication)
 
 **How to Evaluate:**
-
 1. Check publication's track record
 2. Look for multiple independent sources
 3. Verify claims with original documents
 4. Check if other outlets confirmed story
-5. Look for corrections history
 
-**Red Flags:**
-
-- Single anonymous source
-- No verifiable evidence
-- Sensationalized headlines
-- Publication has clear bias
-- Story confirms readers' priors perfectly
+**Red Flags:** Single anonymous source, no verifiable evidence, sensationalized headlines
 
 ---
 
 ### Social Media / Blogs
 
 **Typical Profile:**
-
 - ❌ Domain expertise (usually none)
 - ❌ Access to evidence (third-hand)
 - ❌ Transparent reasoning (opinion-based)
@@ -322,138 +282,66 @@ Combine factors to estimate overall credibility:
 - ❌ Track record (no accountability)
 
 **How to Evaluate:**
-
 1. Who is the author? (real credentials?)
 2. Do they cite sources? (check them)
 3. Is this confirmed elsewhere? (independent verification)
 4. What's their incentive? (followers? sales?)
-5. Have they been wrong before? (check history)
 
-**Red Flags:**
-
-- Anonymous or pseudonymous
-- No sources cited
-- Appeals to emotion
-- "THEY don't want you to know!"
-- Selling something related to claim
+**Red Flags:** Anonymous, no sources cited, appeals to emotion, "THEY don't want you to know!", selling something
 
 ---
 
 ### Government / Institutional Sources
 
 **Typical Profile:**
-
 - ✅ Domain expertise (usually high)
 - ✅ Access to evidence (official data)
 - ⚠️ Transparent reasoning (varies)
 - ⚠️ Incentives (political/institutional)
-- ⚠️ Track record (varies by institution)
 
 **How to Evaluate:**
+1. Is this factual data or interpretation?
+2. What are the institutional incentives?
+3. Can data be verified independently?
+4. Is there political pressure on this topic?
 
-1. Which agency? (CDC ≠ State Dept ≠ Congressional Office)
-2. Is this within their domain?
-3. Do they show their data?
-4. What's the political context?
-5. Do independent experts agree?
-
-**Red Flags:**
-
-- Politically sensitive topic
-- No data transparency
-- Contradicts independent research
-- Timing suspiciously convenient
-- Agency has history of misrepresentation
+**Red Flags:** Data contradicts independent sources, selective disclosure, politically convenient timing
 
 ---
 
-## Quick Credibility Checklist
+## When Credibility Is Irrelevant
 
-**Before accepting a claim, ask:**
+**For claims verifiable from primary sources:**
+Source credibility is largely irrelevant. Check the primary source. The question becomes whether the source correctly identified and interpreted it — a specific, checkable question.
 
-```
-[ ] Does source have relevant domain expertise?
-[ ] Does source have direct access to evidence?
-[ ] Has source been accurate in the past?
-[ ] Does source have incentive to distort?
-[ ] Can I follow source's reasoning?
-[ ] Does source acknowledge uncertainty appropriately?
-[ ] Do other credible sources agree?
-[ ] Have I verified the primary evidence myself?
-```
-
-**If 5+ checks pass: Provisionally accept (with monitoring)**
-**If 3-4 checks pass: Verify independently before accepting**
-**If 0-2 checks pass: Reject or treat as weak hypothesis only**
+**For claims that cannot be verified:**
+Source credibility is relevant but insufficient. Label the claim as unverified regardless of source credibility.
 
 ---
 
-## Common Errors in Credibility Assessment
+## Decision Framework
 
-### 1. Halo Effect
+**High credibility claim:**
+- Accept provisionally
+- Note the claim and source
+- Update if contradicted later
 
-**Error:** Source is credible in domain A → assume credible in domain B
+**Medium credibility claim:**
+- Verify before acting on it
+- Check primary sources
+- Look for independent confirmation
 
-**Example:** Nobel physicist on climate science (not their expertise)
+**Low credibility claim:**
+- Treat as hypothesis only
+- Require strong independent verification
+- Do not act without confirmation
 
-**Fix:** Evaluate domain-specific expertise separately
-
----
-
-### 2. Reverse Halo Effect
-
-**Error:** Source has bias → assume everything they say is false
-
-**Example:** Partisan journalist on factual reporting
-
-**Fix:** Evaluate specific claims, not just source generally
-
----
-
-### 3. Credential Worship
-
-**Error:** PhD → must be right
-
-**Example:** PhD in unrelated field making claims outside expertise
-
-**Fix:** Check domain-specific expertise, not just credentials
+**Very low credibility claim:**
+- Likely unreliable
+- Ignore unless verified from credible source
+- Note the pattern for future reference
 
 ---
 
-### 4. Ad Hominem Dismissal
-
-**Error:** Source has character flaw → all claims invalid
-
-**Example:** "They're a jerk, so they must be wrong"
-
-**Fix:** Evaluate claims independently of character
-
----
-
-### 5. Conspiracy Thinking
-
-**Error:** Mainstream sources are all compromised → trust fringe sources
-
-**Example:** "All scientists are paid by Big Pharma"
-
-**Fix:** Evaluate each source independently with evidence
-
----
-
-## Integration with Other Frameworks
-
-| Credibility Factor | Related Framework | Why It Matters |
-|-------------------|------------------|----------------|
-| Domain expertise | Physicist Protocol (material grounding) | Can they actually know this? |
-| Access to evidence | Epistemic Hygiene (claim verification) | Primary vs secondary sources |
-| Track record | Epistemic Hygiene (confidence calibration) | Past accuracy predicts future |
-| Incentive structure | Three-Layer (L3 social dynamics) | Cui bono? |
-| Transparency | Physicist Protocol (hypothesis-first) | Can you follow reasoning? |
-| Epistemic humility | Physicist Protocol (will as counterweight) | Genuine uncertainty vs performance |
-| Peer validation | Three-Layer (L3 institutional grounding) | External consensus check |
-
----
-
-**Version:** 1.0
-**Status:** Production
-**Recommended for:** Anyone evaluating sources for research, decision-making, or knowledge integration
+*Version: 2.0 | Jengo Business Public Knowledge*
+*Merged: Claim-first assessment + systematic evaluation factors*

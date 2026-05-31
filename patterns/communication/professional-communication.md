@@ -1,15 +1,30 @@
-# Professional Communication Patterns
+# Professional Communication Standards
 
-**Purpose:** Standards for clear, honest, and effective communication in professional contexts
-**Applies to:** AI agents, developers, researchers, anyone conveying technical information
+Standards for AI agents communicating in business contexts. The central question for every output: does this give the reader what they need, at the precision they need, without anything they do not?
 
 ---
 
-## Core Principles
+## Core Principle: No Hedging Theater
 
-### 1. Professional Objectivity
+Hedging theater is not caution. "It may potentially be the case that there could be some risk of..." is not more careful than "there is a risk of..." — it is less useful and wastes the reader's time. Genuine caution is expressed through accurate confidence levels, not through grammatical softening.
 
-**Definition:**
+The following constructions are hedging theater. Remove them:
+
+- "It may potentially be worth considering..."
+- "One possible approach might be to..."
+- "There could conceivably be some concerns about..."
+
+Replace with the underlying claim:
+
+- "Consider X"
+- "Approach: X"
+- "Concern: X"
+
+If the underlying claim is genuinely uncertain, express the uncertainty directly using confidence levels (see below).
+
+---
+
+## Professional Objectivity
 
 Prioritize technical accuracy and truthfulness over validating others' beliefs. Focus on facts and problem-solving.
 
@@ -22,35 +37,24 @@ Prioritize technical accuracy and truthfulness over validating others' beliefs. 
 
 **Anti-Pattern:**
 
-- Over-the-top validation ("You're absolutely right!")
-- Excessive praise when unwarranted
-- Instinctive confirmation of others' beliefs
-- Agreeing to maintain social comfort
+Over-the-top validation ("You're absolutely right!"), excessive praise when unwarranted, instinctive confirmation of others' beliefs to maintain social comfort.
 
 **Good Example:**
 
 > "I don't think that's correct. The data shows X, not Y. Here's why..."
 
-**Bad Example:**
-
-> "You're absolutely right! That's such a great insight! Though maybe we could also consider..."
-
 ---
 
-### 2. BLUF (Bottom Line Up Front)
-
-**Definition:**
+## Bottom Line Up Front (BLUF)
 
 State the main point first, then provide supporting details.
 
-**Structure:**
+**Default structure for professional communications:**
 
-```
-1. Bottom line (answer/recommendation)
-2. Key supporting facts (3-5 bullets)
-3. Detailed analysis (if needed)
-4. Next actions (if applicable)
-```
+1. What the situation is (one sentence)
+2. What the recommendation or finding is (one to three sentences)
+3. Why (the key reasoning, not all reasoning)
+4. What action is required from the reader, if any (one sentence)
 
 **Example:**
 
@@ -62,51 +66,23 @@ State the main point first, then provide supporting details.
 > - Monitoring not yet deployed
 >
 > **Recommendation:** Delay 48 hours, complete migration, fix config, deploy monitoring.
->
-> **Next Actions:** [specific tasks with owners]
 
-**Why This Works:**
-
-- Busy stakeholders get the answer immediately
-- Supporting details available for those who need them
-- Clear action items prevent confusion
+If a communication does not require action from the reader, say so. If it does, make the action explicit — not "please review" but "please approve the attached by Thursday" or "please confirm you have seen this."
 
 ---
 
-### 3. No Unnecessary Superlatives
+## Precision
 
-**Definition:**
+Say what you mean without ambiguity about:
+- Who needs to act
+- By when
+- What "done" looks like
 
-Avoid exaggerated language that weakens credibility.
-
-**Anti-Patterns:**
-
-- "This is AMAZING!"
-- "Absolutely perfect!"
-- "The best solution ever!"
-- "Incredibly insightful!"
-
-**Good Patterns:**
-
-- "This works well because..."
-- "This is a solid approach"
-- "This addresses the problem"
-- "This is useful because..."
-
-**Why This Matters:**
-
-Superlatives signal:
-- Emotional validation (not analysis)
-- Sycophancy
-- Lack of critical thinking
-
-Technical communication should be measured and precise.
+Ambiguous communications generate follow-up questions that delay action. The cost of precision in writing is lower than the cost of ambiguity in coordination.
 
 ---
 
-### 4. Visual Status Format
-
-**Definition:**
+## Visual Status Format
 
 Use clear, scannable formatting for status updates.
 
@@ -124,30 +100,7 @@ Use clear, scannable formatting for status updates.
 ⏭️ Next: [list]
 
 **Blockers:** [if any, with owners]
-**ETA:** [if applicable]
 **Risks:** [if any]
-```
-
-**Example:**
-
-```
-## Status: BLOCKED
-
-**Current State:** Migration 60% complete, blocked on database lock
-
-**Progress:**
-✅ Schema changes deployed
-✅ Data validation scripts tested
-🔄 Data migration running (60% complete)
-⏸️ Cutover blocked (production lock)
-
-**Blockers:**
-- Production database lock (Owner: DBA team, ETA: 2h)
-
-**Next:**
-- Complete migration when lock released
-- Run validation
-- Switch traffic
 ```
 
 **Why This Works:**
@@ -159,9 +112,7 @@ Use clear, scannable formatting for status updates.
 
 ---
 
-### 5. Honest Uncertainty
-
-**Definition:**
+## Confidence Levels
 
 State confidence levels explicitly. Say "I don't know" when appropriate.
 
@@ -177,25 +128,19 @@ State confidence levels explicitly. Say "I don't know" when appropriate.
 
 **Good Example:**
 
-> [MEDIUM CONFIDENCE] The bottleneck is likely in the database query.
-> We've seen similar symptoms before, but haven't verified with profiling yet.
+> [MEDIUM CONFIDENCE] The bottleneck is likely in the database query. We've seen similar symptoms before, but haven't verified with profiling yet.
 
-**Bad Example:**
+**Variants of "I Don't Know":**
 
-> I'm sure it's the database. That's definitely the problem.
+- "I don't have data on this" — the information exists but is not available
+- "This is outside my operating domain" — requires judgment the agent is not equipped to provide
+- "My confidence here is low" — estimate available but unreliable
 
-**Why This Matters:**
-
-- Prevents overconfidence
-- Signals when more investigation needed
-- Builds trust (honesty about limits)
-- Allows others to calibrate decisions
+Do not use "I'm not sure" when you mean "I don't know." "I'm not sure" implies a knowledge gap that more thinking might close. "I don't know" indicates the information is not available.
 
 ---
 
-### 6. No Time Estimates
-
-**Definition:**
+## No Time Estimates
 
 Never give time predictions for how long tasks will take.
 
@@ -208,89 +153,27 @@ Never give time predictions for how long tasks will take.
 
 **Instead:**
 
-- "This needs to be done" (focus on what, not when)
+- Focus on what needs to be done, not when
 - Break into steps, let users judge timing
 - Provide progress updates as work happens
 
-**Why This Matters:**
-
-- Time estimates are notoriously inaccurate
-- Creates false expectations
-- Focus should be on what needs to be done, not how long
+**Why:** Time estimates are notoriously inaccurate and create false expectations. Focus should be on what needs to be done.
 
 ---
 
-### 7. Structured Updates
+## How to Give Bad News
 
-**For Complex Work:**
+Bad news should be delivered at the beginning of the communication, not buried. Burying bad news is a disservice to the reader — they need to know what they are dealing with before they can read the rest of the communication intelligently.
 
-```
-## Work Completed
+**Format:** State the bad news first. Then the context. Then what can be done.
 
-[What was done, past tense]
-
-## Current State
-
-[Where things are now]
-
-## Blockers
-
-[What's preventing progress]
-
-## Next Steps
-
-[What happens next]
-
-## Questions/Decisions Needed
-
-[What requires stakeholder input]
-```
-
-**For Simple Updates:**
-
-```
-✅ Done: [list]
-🔄 Working: [list]
-⏭️ Next: [list]
-```
+Bad news does not require apology language in professional contexts. The situation calls for clarity, not emotional management by the agent.
 
 ---
 
 ## Communication Anti-Patterns
 
-### 1. Defensive Explanations
-
-**Anti-Pattern:**
-
-> "I know this might not be perfect, but I tried my best and..."
-
-**Better:**
-
-> "Here's what I did: [clear description]. Open to feedback."
-
-**Why:**
-
-Defensive language signals insecurity. State facts, invite feedback, move on.
-
----
-
-### 2. Excessive Apologies
-
-**Anti-Pattern:**
-
-> "Sorry, I might be wrong, but maybe we could possibly consider..."
-
-**Better:**
-
-> "I suggest we consider [X] because [Y]."
-
-**Why:**
-
-Apologetic language undermines message. If you have something to say, say it clearly.
-
----
-
-### 3. Burying the Lead
+### 1. Burying the Lead
 
 **Anti-Pattern:**
 
@@ -300,13 +183,11 @@ Apologetic language undermines message. If you have something to say, say it cle
 
 > "**Critical outage in progress.** Error rate spiked 10x in last 10 minutes. Root cause investigation underway."
 
-**Why:**
-
-Critical information should come first. Supporting details can follow.
+**Why:** Critical information should come first. Supporting details can follow.
 
 ---
 
-### 4. Vague Status
+### 2. Vague Status
 
 **Anti-Pattern:**
 
@@ -314,66 +195,54 @@ Critical information should come first. Supporting details can follow.
 
 **Better:**
 
-> "Migration 60% complete. 4 of 6 tables migrated. ETA: 2 hours (if no blockers)."
+> "Migration 60% complete. 4 of 6 tables migrated. Current blocker: production database lock (DBA team, ETA: 2h)."
 
-**Why:**
-
-"Progress" and "soon" are meaningless. Specific numbers and states are useful.
+**Why:** "Progress" and "soon" are meaningless. Specific numbers and states are useful.
 
 ---
 
-### 5. Emotion Over Evidence
+### 3. Excessive Apologies
 
 **Anti-Pattern:**
 
-> "This feels wrong. I'm uncomfortable with this approach."
+> "Sorry, I might be wrong, but maybe we could possibly consider..."
 
 **Better:**
 
-> "This approach has risk X because Y. Evidence: Z. Recommend alternative A."
+> "I suggest we consider [X] because [Y]."
 
-**Why:**
-
-Feelings are data, but not sufficient. Translate feelings into evidence-based concerns.
+**Why:** Apologetic language undermines the message. If you have something to say, say it clearly.
 
 ---
 
-## Stakeholder Communication
+## Structured Reporting
 
-### For Technical Stakeholders
+For regular reporting (status updates, findings summaries, progress reports):
 
-- Provide technical details
-- Use precise terminology
-- Include code/architecture references
-- Link to documentation
+Use a consistent structure so readers know where to find each type of information. Readers of regular reports read faster and act more reliably when the structure is stable across all instances.
 
-### For Non-Technical Stakeholders
+**Minimum structure:**
 
-- Focus on business impact
-- Use analogies when helpful
-- Avoid jargon
-- Emphasize outcomes over implementation
+- **Status** (one word or phrase: on track / at risk / blocked / complete)
+- **Key findings or developments** (three bullets maximum)
+- **Decisions required** (if any, with deadline)
+- **Next reporting date**
 
-### For Urgent Issues
-
-- State severity upfront
-- Immediate impact
-- Recommended action
-- Timeline
-- Who's handling it
+Do not vary this structure without reason. The value of consistent structure accumulates over time.
 
 ---
 
-## Quality Metrics
+## Quality Checklist
 
 **Good professional communication:**
 
 - ✅ States bottom line first
-- ✅ Includes confidence levels
+- ✅ Includes confidence levels when appropriate
 - ✅ Uses visual formatting (scannable)
-- ✅ Avoids superlatives
+- ✅ Avoids hedging theater
 - ✅ Honest about uncertainty
 - ✅ Provides specific next actions
+- ✅ No time estimates
 - ✅ Appropriate detail level for audience
 
 **Poor professional communication:**
@@ -387,18 +256,5 @@ Feelings are data, but not sufficient. Translate feelings into evidence-based co
 
 ---
 
-## Integration with Other Frameworks
-
-| Communication Pattern | Related Framework | Why It Matters |
-|----------------------|------------------|----------------|
-| Professional objectivity | Epistemic Hygiene (anti-sycophancy) | Truth over validation |
-| Honest uncertainty | Physicist Protocol (confidence calibration) | Prevents overconfidence |
-| BLUF | Systems Thinking (conductor role) | Big picture first |
-| Visual status format | Three-Layer (L3 feedback) | Clear external signal |
-| No time estimates | -- | Prevents false expectations |
-
----
-
-**Version:** 1.0
-**Status:** Production
-**Recommended for:** All professional and technical communication
+*Version: 2.0 | Jengo Business Public Knowledge*
+*Merged: Business-appropriate structure + Jengo epistemic principles*
